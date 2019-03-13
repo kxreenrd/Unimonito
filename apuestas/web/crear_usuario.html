@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Theme Made By www.w3schools.com - No Copyright -->
+        <title>Apuestas UNIMONITO</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"  type='text/css' href="css/cssIndex.css">
+
+    </head>
+    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="index.html">Unimonito</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#rifas">RIFAS</a></li>
+                        <li><a href="#services">APUESTAS</a></li>
+                        <li><a href="#portfolio">TORNEOS</a></li>
+                        <li><a href="#registro">REGISTRO</a></li>
+                        <li><a href="crear_usuario.html">INGRESAR</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+        <div id="formulario_ing" class="container col-sm-4" >
+            <h2>Ingresar</h2>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+                <div class="checkbox">
+                    <label><a onclick="click_btn()">Registrarme</a></label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        
+        <div id="formulario_reg" style="display: none" class="container col-sm-4">
+            <h2>Registro</h2>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+                
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        
+        
+        
+    <script>
+        function click_btn(){
+            document.getElementById("formulario_ing").style.display = 'none';
+            document.getElementById("formulario_reg").style.display = 'block';
+        }
+        
+        
+    </script>
+    </body>
+</html>
