@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Boleta" table="boleta" catalog="unimonito" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.BoletaId">
+            <key-property name="idBoleta" type="int">
+                <column name="idBoleta" />
+            </key-property>
+            <key-property name="nombre" type="string">
+                <column name="nombre" length="45" />
+            </key-property>
+            <key-property name="tipoBoletaIdTipoBoleta" type="int">
+                <column name="Tipo_Boleta_idTipo_Boleta" />
+            </key-property>
+            <key-property name="boleteriaIdBoleteria" type="int">
+                <column name="Boleteria_idBoleteria" />
+            </key-property>
+            <key-property name="boleteriaApuestaIdApuesta" type="int">
+                <column name="Boleteria_Apuesta_idApuesta" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

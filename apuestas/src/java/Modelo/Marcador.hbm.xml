@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Marcador" table="marcador" catalog="unimonito" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.MarcadorId">
+            <key-property name="idMarcador" type="int">
+                <column name="idMarcador" />
+            </key-property>
+            <key-property name="apuestaIdApuesta" type="int">
+                <column name="Apuesta_idApuesta" />
+            </key-property>
+        </composite-id>
+        <property name="marcadorLocal" type="java.lang.Integer">
+            <column name="marcador_local" />
+        </property>
+        <property name="marcadorVisitante" type="java.lang.Integer">
+            <column name="marcador_visitante" />
+        </property>
+    </class>
+</hibernate-mapping>

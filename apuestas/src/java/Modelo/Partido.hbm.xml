@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Partido" table="partido" catalog="unimonito" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.PartidoId">
+            <key-property name="idPartido" type="int">
+                <column name="idPartido" />
+            </key-property>
+            <key-property name="torneoIdTorneo" type="int">
+                <column name="Torneo_idTorneo" />
+            </key-property>
+            <key-property name="apuestaIdApuesta" type="int">
+                <column name="Apuesta_idApuesta" />
+            </key-property>
+        </composite-id>
+        <property name="dia" type="date">
+            <column name="dia" length="10" />
+        </property>
+        <property name="horaInicio" type="timestamp">
+            <column name="hora_inicio" length="19" />
+        </property>
+        <property name="horaFin" type="timestamp">
+            <column name="hora_fin" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Equipo" table="equipo" catalog="unimonito" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.EquipoId">
+            <key-property name="idEquipo" type="int">
+                <column name="idEquipo" />
+            </key-property>
+            <key-property name="deporteIdDeporte" type="int">
+                <column name="Deporte_idDeporte" />
+            </key-property>
+        </composite-id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
