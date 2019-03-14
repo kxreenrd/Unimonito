@@ -5,11 +5,13 @@
         <title>Apuestas UNIMONITO</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet"  type='text/css' href="css/cssIndex.css">
+        
 
     </head>
     <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -26,9 +28,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#rifas">RIFAS</a></li>
+<!--                        <li><a href="#rifas">RIFAS</a></li>
                         <li><a href="#apuestas">APUESTAS</a></li>
-                        <li><a href="#ganadores">GANADORES</a></li>
+                        <li><a href="#ganadores">GANADORES</a></li>-->
                         <li><a href="crear_usuario.html">INGRESAR</a></li>
                     </ul>
                 </div>
@@ -42,8 +44,14 @@
                 negocio al ofrecer una serie de rifas y apuestas a los fanáticos de los deportes en Colombia cuyo
                 premio inicial (para la rifa) es el de un viaje todo pago al súper bowl 2020.</p> 
         </div>
+        
+        <div class="btn-group btn-group-justified">
+            <a href="DeporteServlet" class="btn btn-primary"> Rifas</a>
+            <a href="#" class="btn btn-primary">Apuestas</a>
+            <a href="#" class="btn btn-primary">Ganadores</a>
+        </div>
 
-        <!-- Container (RIFAS Section) -->
+<!--         Container (RIFAS Section) 
         <div id="rifas" class="container-fluid">
             <h2>Rifas</h2><br>
             <div class="row">
@@ -82,7 +90,7 @@
             </div>
         </div>
 
-        <!-- Container (Apuestas Section) -->
+         Container (Apuestas Section) 
         <div id="apuestas" class="container-fluid">
             <h2>Apuestas</h2><br>
             <div class="row">
@@ -112,7 +120,7 @@
         </div>
         
 
-        <!-- Container (Ganadores Section) -->
+         Container (Ganadores Section) 
         <div id="ganadores" class="container-fluid">
             <div class="text-center">
                 <h2>Ganadores</h2>
@@ -199,7 +207,7 @@
         </div>
 
 
-        <!-- Image of location/map -->
+         Image of location/map 
         <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
 
         <footer class="container-fluid text-center">
@@ -207,44 +215,9 @@
                 <span class="glyphicon glyphicon-chevron-up"></span>
             </a>
             <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
-        </footer>
+        </footer>-->
 
-        <script>
-        $(document).ready(function(){
-          // Add smooth scrolling to all links in navbar + footer link
-          $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
-            if (this.hash !== "") {
-              // Prevent default anchor click behavior
-              event.preventDefault();
-
-              // Store hash
-              var hash = this.hash;
-
-              // Using jQuery's animate() method to add smooth page scroll
-                        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 900, function () {
-
-                            // Add hash (#) to URL when done scrolling (default click behavior)
-                            window.location.hash = hash;
-                        });
-                    } // End if
-                });
-
-                $(window).scroll(function () {
-                    $(".slideanim").each(function () {
-                        var pos = $(this).offset().top;
-
-                        var winTop = $(window).scrollTop();
-                        if (pos < winTop + 600) {
-                            $(this).addClass("slide");
-                        }
-                    });
-                });
-            })
-        </script>
+        
 
     </body>
 </html>

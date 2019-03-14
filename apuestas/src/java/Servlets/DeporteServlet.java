@@ -47,12 +47,58 @@ public class DeporteServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">");
+            out.println("<link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\">");
+            out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>");
+            out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>");
+            out.println("<link rel=\"stylesheet\"  type='text/css' href=\"css/cssIndex.css\">");
+            
             out.println("<title>Servlet DeporteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
+            
+            out.println("<nav class=\"navbar navbar-default navbar-fixed-top\">\n" +
+                "            <div class=\"container\">\n" +
+                "                <div class=\"navbar-header\">\n" +
+                "                    <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n" +
+                "                        <span class=\"icon-bar\"></span>\n" +
+                "                        <span class=\"icon-bar\"></span>\n" +
+                "                        <span class=\"icon-bar\"></span>                        \n" +
+                "                    </button>\n" +
+                "                    <a class=\"navbar-brand\" href=\"index.html\">Unimonito</a>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "        </nav>");
+            
+            out.println("<div id=\"rifas\" class=\"container-fluid\">\n" +
+                "            <h2>Rifas</h2><br>\n" +
+                "            <div class=\"row\">\n" +
+                "                <table class=\"table\">\n" +
+                "                    <thead>\n" +
+                "                        <tr>\n" +
+                "                            <th>Nombre de rifa</th>\n" +
+                "                            <th>Premio</th>\n" +
+                "                            <th>Cantidad de boletas</th>\n" +
+                "                        </tr>\n" +
+                "                    </thead>\n" +
+                "                    <tbody>\n" );
             for(Deporte p:misDeportes){
-                out.println("<h1>DEPORTES " + p.getNombre() + "</h1>");
+                out.println("<tr>\n" +
+"                            <td>" + p.getNombre() + "</td>\n" +
+"                            <td>Doe</td>\n" +
+"                            <td>\n" +
+"                                <span class=\"label label-primary\">4</span>\n" +
+"                            </td>\n" +
+"                        </tr>\n");
             }
+                               
+                out.println("</tbody>\n" +
+                "                </table>\n" +
+                "            </div>\n" +
+                "        </div>");
+            
+            
+            
             
             out.println("</body>");
             out.println("</html>");
