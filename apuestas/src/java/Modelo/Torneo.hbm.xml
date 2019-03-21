@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Torneo" table="torneo" catalog="unimonito" optimistic-lock="version">
-        <id name="idTorneo" type="int">
-            <column name="idTorneo" />
+        <id name="idtorneo" type="int">
+            <column name="idtorneo" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="string">
-            <column name="nombre" length="45" />
+            <column name="nombre" length="45" not-null="true" />
+        </property>
+        <property name="fechaInicio" type="timestamp">
+            <column name="fecha_inicio" length="19" not-null="true" />
+        </property>
+        <property name="fechaFin" type="timestamp">
+            <column name="fecha_fin" length="19" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

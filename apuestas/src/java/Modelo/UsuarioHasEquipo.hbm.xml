@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.UsuarioHasEquipo" table="usuario_has_equipo" catalog="unimonito" optimistic-lock="version">
+        <composite-id name="id" class="Modelo.UsuarioHasEquipoId">
+            <key-property name="usuarioIdusuario" type="int">
+                <column name="usuario_idusuario" />
+            </key-property>
+            <key-property name="equipoIdequipo" type="int">
+                <column name="equipo_idequipo" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

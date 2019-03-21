@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Usuario" table="usuario" catalog="unimonito" optimistic-lock="version">
+        <id name="idusuario" type="int">
+            <column name="idusuario" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombres" type="string">
+            <column name="nombres" length="45" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="45" not-null="true" />
+        </property>
+        <property name="identificacion" type="int">
+            <column name="identificacion" not-null="true" />
+        </property>
+        <property name="rolIdrol" type="int">
+            <column name="rol_idrol" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13/03/2019 12:05:59 AM by Hibernate Tools 4.3.1
+// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,27 +9,25 @@ package Modelo;
 public class Deporte  implements java.io.Serializable {
 
 
-     private DeporteId id;
+     private int iddeporte;
      private String nombre;
+     private int torneoIdtorneo;
 
     public Deporte() {
     }
 
-	
-    public Deporte(DeporteId id) {
-        this.id = id;
-    }
-    public Deporte(DeporteId id, String nombre) {
-       this.id = id;
+    public Deporte(int iddeporte, String nombre, int torneoIdtorneo) {
+       this.iddeporte = iddeporte;
        this.nombre = nombre;
+       this.torneoIdtorneo = torneoIdtorneo;
     }
    
-    public DeporteId getId() {
-        return this.id;
+    public int getIddeporte() {
+        return this.iddeporte;
     }
     
-    public void setId(DeporteId id) {
-        this.id = id;
+    public void setIddeporte(int iddeporte) {
+        this.iddeporte = iddeporte;
     }
     public String getNombre() {
         return this.nombre;
@@ -37,6 +35,13 @@ public class Deporte  implements java.io.Serializable {
     
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    public int getTorneoIdtorneo() {
+        return this.torneoIdtorneo;
+    }
+    
+    public void setTorneoIdtorneo(int torneoIdtorneo) {
+        this.torneoIdtorneo = torneoIdtorneo;
     }
 
 

@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 13/03/2019 12:06:04 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="Modelo.TipoBoleta" table="tipo_boleta" catalog="unimonito" optimistic-lock="version">
-        <id name="idTipoBoleta" type="int">
-            <column name="idTipo_Boleta" />
+    <class name="Modelo.Rol" table="rol" catalog="unimonito" optimistic-lock="version">
+        <id name="idrol" type="int">
+            <column name="idrol" />
             <generator class="assigned" />
         </id>
         <property name="nombre" type="string">
-            <column name="nombre" length="45" />
+            <column name="nombre" length="45" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

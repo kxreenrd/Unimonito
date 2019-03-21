@@ -42,19 +42,14 @@ Contributor(s):
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="unimonito"/>
   <table-filter match-name="torneo"/>
-  <table-filter match-name="premio"/>
+  <table-filter match-name="usuario_has_equipo"/>
   <table-filter match-name="partido"/>
-  <table-filter match-name="equipo"/>
-  <table-filter match-name="tipo_boleta"/>
-  <table-filter match-name="venta_boletas"/>
-  <table-filter match-name="rifa_has_catalogo_rifa"/>
-  <table-filter match-name="boleta"/>
-  <table-filter match-name="marcador"/>
   <table-filter match-name="deporte"/>
+  <table-filter match-name="ganador"/>
+  <table-filter match-name="equipo"/>
   <table-filter match-name="apuesta"/>
-  <table-filter match-name="jugador"/>
-  <table-filter match-name="catalogo_rifa"/>
-  <table-filter match-name="participante"/>
+  <table-filter match-name="usuario"/>
   <table-filter match-name="rifa"/>
-  <table-filter match-name="boleteria"/>
+  <table-filter match-name="boleta"/>
+  <table-filter match-name="rol"/>
 </hibernate-reverse-engineering>

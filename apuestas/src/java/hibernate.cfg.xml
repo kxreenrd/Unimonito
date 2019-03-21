@@ -49,20 +49,15 @@ Contributor(s):
     <property name="hibernate.jdbc.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping resource="Modelo/Partido.hbm.xml"/>
-    <mapping resource="Modelo/Jugador.hbm.xml"/>
+    <mapping resource="Modelo/Deporte.hbm.xml"/>
+    <mapping resource="Modelo/Usuario.hbm.xml"/>
     <mapping resource="Modelo/Torneo.hbm.xml"/>
+    <mapping resource="Modelo/UsuarioHasEquipo.hbm.xml"/>
+    <mapping resource="Modelo/Equipo.hbm.xml"/>
+    <mapping resource="Modelo/Ganador.hbm.xml"/>
     <mapping resource="Modelo/Rifa.hbm.xml"/>
     <mapping resource="Modelo/Boleta.hbm.xml"/>
-    <mapping resource="Modelo/CatalogoRifa.hbm.xml"/>
     <mapping resource="Modelo/Apuesta.hbm.xml"/>
-    <mapping resource="Modelo/Deporte.hbm.xml"/>
-    <mapping resource="Modelo/RifaHasCatalogoRifa.hbm.xml"/>
-    <mapping resource="Modelo/Premio.hbm.xml"/>
-    <mapping resource="Modelo/VentaBoletas.hbm.xml"/>
-    <mapping resource="Modelo/Marcador.hbm.xml"/>
-    <mapping resource="Modelo/Participante.hbm.xml"/>
-    <mapping resource="Modelo/TipoBoleta.hbm.xml"/>
-    <mapping resource="Modelo/Equipo.hbm.xml"/>
-    <mapping resource="Modelo/Boleteria.hbm.xml"/>
+    <mapping resource="Modelo/Rol.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

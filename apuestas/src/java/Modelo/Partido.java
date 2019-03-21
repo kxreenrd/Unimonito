@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13/03/2019 12:05:59 AM by Hibernate Tools 4.3.1
+// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,52 +10,66 @@ import java.util.Date;
 public class Partido  implements java.io.Serializable {
 
 
-     private PartidoId id;
-     private Date dia;
-     private Date horaInicio;
-     private Date horaFin;
+     private int idpartido;
+     private int equipoLocal;
+     private int equipoVisitante;
+     private Date fecha;
+     private String marcador;
+     private int torneoIdtorneo;
 
     public Partido() {
     }
 
-	
-    public Partido(PartidoId id) {
-        this.id = id;
-    }
-    public Partido(PartidoId id, Date dia, Date horaInicio, Date horaFin) {
-       this.id = id;
-       this.dia = dia;
-       this.horaInicio = horaInicio;
-       this.horaFin = horaFin;
+    public Partido(int idpartido, int equipoLocal, int equipoVisitante, Date fecha, String marcador, int torneoIdtorneo) {
+       this.idpartido = idpartido;
+       this.equipoLocal = equipoLocal;
+       this.equipoVisitante = equipoVisitante;
+       this.fecha = fecha;
+       this.marcador = marcador;
+       this.torneoIdtorneo = torneoIdtorneo;
     }
    
-    public PartidoId getId() {
-        return this.id;
+    public int getIdpartido() {
+        return this.idpartido;
     }
     
-    public void setId(PartidoId id) {
-        this.id = id;
+    public void setIdpartido(int idpartido) {
+        this.idpartido = idpartido;
     }
-    public Date getDia() {
-        return this.dia;
-    }
-    
-    public void setDia(Date dia) {
-        this.dia = dia;
-    }
-    public Date getHoraInicio() {
-        return this.horaInicio;
+    public int getEquipoLocal() {
+        return this.equipoLocal;
     }
     
-    public void setHoraInicio(Date horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setEquipoLocal(int equipoLocal) {
+        this.equipoLocal = equipoLocal;
     }
-    public Date getHoraFin() {
-        return this.horaFin;
+    public int getEquipoVisitante() {
+        return this.equipoVisitante;
     }
     
-    public void setHoraFin(Date horaFin) {
-        this.horaFin = horaFin;
+    public void setEquipoVisitante(int equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
+    }
+    public Date getFecha() {
+        return this.fecha;
+    }
+    
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    public String getMarcador() {
+        return this.marcador;
+    }
+    
+    public void setMarcador(String marcador) {
+        this.marcador = marcador;
+    }
+    public int getTorneoIdtorneo() {
+        return this.torneoIdtorneo;
+    }
+    
+    public void setTorneoIdtorneo(int torneoIdtorneo) {
+        this.torneoIdtorneo = torneoIdtorneo;
     }
 
 

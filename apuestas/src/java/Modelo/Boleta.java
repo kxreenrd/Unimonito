@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13/03/2019 12:05:59 AM by Hibernate Tools 4.3.1
+// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,21 +9,39 @@ package Modelo;
 public class Boleta  implements java.io.Serializable {
 
 
-     private BoletaId id;
+     private int idboleta;
+     private int valor;
+     private int usuarioIdusuario;
 
     public Boleta() {
     }
 
-    public Boleta(BoletaId id) {
-       this.id = id;
+    public Boleta(int idboleta, int valor, int usuarioIdusuario) {
+       this.idboleta = idboleta;
+       this.valor = valor;
+       this.usuarioIdusuario = usuarioIdusuario;
     }
    
-    public BoletaId getId() {
-        return this.id;
+    public int getIdboleta() {
+        return this.idboleta;
     }
     
-    public void setId(BoletaId id) {
-        this.id = id;
+    public void setIdboleta(int idboleta) {
+        this.idboleta = idboleta;
+    }
+    public int getValor() {
+        return this.valor;
+    }
+    
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+    public int getUsuarioIdusuario() {
+        return this.usuarioIdusuario;
+    }
+    
+    public void setUsuarioIdusuario(int usuarioIdusuario) {
+        this.usuarioIdusuario = usuarioIdusuario;
     }
 
 

@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13/03/2019 12:05:59 AM by Hibernate Tools 4.3.1
+// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,34 +9,39 @@ package Modelo;
 public class Equipo  implements java.io.Serializable {
 
 
-     private EquipoId id;
-     private String nombre;
+     private int idequipo;
+     private String nombreEquipo;
+     private int deporteIddeporte;
 
     public Equipo() {
     }
 
-	
-    public Equipo(EquipoId id) {
-        this.id = id;
-    }
-    public Equipo(EquipoId id, String nombre) {
-       this.id = id;
-       this.nombre = nombre;
+    public Equipo(int idequipo, String nombreEquipo, int deporteIddeporte) {
+       this.idequipo = idequipo;
+       this.nombreEquipo = nombreEquipo;
+       this.deporteIddeporte = deporteIddeporte;
     }
    
-    public EquipoId getId() {
-        return this.id;
+    public int getIdequipo() {
+        return this.idequipo;
     }
     
-    public void setId(EquipoId id) {
-        this.id = id;
+    public void setIdequipo(int idequipo) {
+        this.idequipo = idequipo;
     }
-    public String getNombre() {
-        return this.nombre;
+    public String getNombreEquipo() {
+        return this.nombreEquipo;
     }
     
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
+    }
+    public int getDeporteIddeporte() {
+        return this.deporteIddeporte;
+    }
+    
+    public void setDeporteIddeporte(int deporteIddeporte) {
+        this.deporteIddeporte = deporteIddeporte;
     }
 
 

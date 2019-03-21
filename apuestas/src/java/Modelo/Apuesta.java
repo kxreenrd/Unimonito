@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 13/03/2019 12:05:59 AM by Hibernate Tools 4.3.1
+// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,39 +9,57 @@ package Modelo;
 public class Apuesta  implements java.io.Serializable {
 
 
-     private int idApuesta;
-     private String nombre;
-     private int valorApuesta;
+     private int idapuesta;
+     private int valorMaximo;
+     private int valorMinimo;
+     private int partidoIdpartido;
+     private int boletaIdboleta;
 
     public Apuesta() {
     }
 
-    public Apuesta(int idApuesta, String nombre, int valorApuesta) {
-       this.idApuesta = idApuesta;
-       this.nombre = nombre;
-       this.valorApuesta = valorApuesta;
+    public Apuesta(int idapuesta, int valorMaximo, int valorMinimo, int partidoIdpartido, int boletaIdboleta) {
+       this.idapuesta = idapuesta;
+       this.valorMaximo = valorMaximo;
+       this.valorMinimo = valorMinimo;
+       this.partidoIdpartido = partidoIdpartido;
+       this.boletaIdboleta = boletaIdboleta;
     }
    
-    public int getIdApuesta() {
-        return this.idApuesta;
+    public int getIdapuesta() {
+        return this.idapuesta;
     }
     
-    public void setIdApuesta(int idApuesta) {
-        this.idApuesta = idApuesta;
+    public void setIdapuesta(int idapuesta) {
+        this.idapuesta = idapuesta;
     }
-    public String getNombre() {
-        return this.nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    public int getValorApuesta() {
-        return this.valorApuesta;
+    public int getValorMaximo() {
+        return this.valorMaximo;
     }
     
-    public void setValorApuesta(int valorApuesta) {
-        this.valorApuesta = valorApuesta;
+    public void setValorMaximo(int valorMaximo) {
+        this.valorMaximo = valorMaximo;
+    }
+    public int getValorMinimo() {
+        return this.valorMinimo;
+    }
+    
+    public void setValorMinimo(int valorMinimo) {
+        this.valorMinimo = valorMinimo;
+    }
+    public int getPartidoIdpartido() {
+        return this.partidoIdpartido;
+    }
+    
+    public void setPartidoIdpartido(int partidoIdpartido) {
+        this.partidoIdpartido = partidoIdpartido;
+    }
+    public int getBoletaIdboleta() {
+        return this.boletaIdboleta;
+    }
+    
+    public void setBoletaIdboleta(int boletaIdboleta) {
+        this.boletaIdboleta = boletaIdboleta;
     }
 
 
