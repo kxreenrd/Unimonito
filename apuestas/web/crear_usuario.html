@@ -35,15 +35,15 @@
         
         <div id="formulario_ing" class="card col-sm-4" >
             <h2>Ingresar</h2>
-            <form action="/action_page.php">
+            <form action="ingresar_usuario" method="POST">
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="identificacion">Identificacion:</label>
+                    <input type="number" class="form-control" placeholder="Enter email" name="identificacion">
                 </div>
-                <div class="form-group">
+<!--                <div class="form-group">
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                </div>
+                </div>-->
                 <div class="checkbox">
                     <label><a onclick="click_btn()">Registrarme</a></label>
                 </div>
@@ -53,18 +53,18 @@
         
         <div id="formulario_reg" style="display: none" class="container col-sm-4">
             <h2>Registro</h2>
-            <form action="/action_page.php">
+            <form action="crearUsuario" method="POST">
                 <div class="form-group">
                     <label for="nombre_usuario">Nombres:</label>
-                    <input type="text" class="form-control" id="nombre_usuario" placeholder="Enter nombre" name="nombre_usuario">
+                    <input type="text" class="form-control" placeholder="Enter nombre" name="nombre_usuario">
                 </div>
                 <div class="form-group">
                     <label for="apellido_usuario">Apelidos:</label>
-                    <input type="text" class="form-control" id="apellido_usuario" placeholder="Enter apellido" name=apellido_usuario">
+                    <input type="text" class="form-control" placeholder="Enter apellido" name="apellido_usuario">
                 </div>
                 <div class="form-group">
                     <label for="identificacion">Identificación:</label>
-                    <input type="text" class="form-control" id="identificacion" placeholder="Enter identificacion" name=identificacion">
+                    <input type="number" class="form-control" placeholder="Enter identificacion" name="identificacion">
                 </div>                
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>

@@ -13,7 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
- * algo debo cambiarle?????
+ * 
  * @author Karen Rodriguez
  */
 public class DeportesDAO {

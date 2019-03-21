@@ -5,25 +5,24 @@
  */
 package Servlets;
 
-import DAO.DeportesDAO;
 import DAO.UsuarioDAO;
-import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Modelo.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Karen Rodriguez
  */
-@WebServlet(name = "crearUsuario", urlPatterns = {"/crearUsuario"})
-public class crearUsuario extends HttpServlet {
+@WebServlet(name = "ingresar_usuario", urlPatterns = {"/ingresar_usuario"})
+public class ingresar_usuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,8 +34,8 @@ public class crearUsuario extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    String nombre, apellido, id, identificacion;
-    boolean usuario;
+    String identificacion;
+    List<Usuario> u = new ArrayList<Usuario>();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -69,17 +68,23 @@ public class crearUsuario extends HttpServlet {
                 "            </div>\n" +
                 "        </nav>");
             out.println("<div class='contenido_pagina'>");
-            if(usuario){
-                out.println("<h1>Su usuario ha sido creado " + nombre +"  "+ apellido + " ¡Bienvenido!</h1>");
-            } else {
-                out.println("<h1>Lo sentimos su usuario ya esta registrado </h1>");
+            for(Usuario p:u){
+                if(p.getRolIdrol() == 1){
+                    out.println("<h2> ->"+p.getNombres()+" usted es administrador</h2>");
+                } else if(p.getRolIdrol() == 2){
+                    out.println("<h2> ->"+p.getNombres()+" usted es jugador</h2>");
+                }
+                out.println("<h2> ->"+p.getNombres()+"</h2>");
             }
             out.println("</div>");
-            
             
             out.println("</body>");
             out.println("</html>");
         }
+    }
+    
+    private void admin(){
+        //tabla con rifa y apuestas
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -111,12 +116,10 @@ public class crearUsuario extends HttpServlet {
         
         UsuarioDAO us = new UsuarioDAO();
         
-        
-        nombre = request.getParameter("nombre_usuario");
-        apellido = request.getParameter("apellido_usuario");
         identificacion = request.getParameter("identificacion");
         
-        usuario = us.setUsuario(nombre, apellido, Integer.parseInt(identificacion));
+        u = us.getUsuario(Integer.parseInt(identificacion));
+        
         
         processRequest(request, response);
     }
