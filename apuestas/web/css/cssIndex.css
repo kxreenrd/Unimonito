@@ -194,3 +194,9 @@ footer .glyphicon {
 .contenido_pagina{
     margin: 7% 2% 2% 4%;
 }
+
+.container_ins{
+    border-radius: 5px 5px;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Rol" table="rol" catalog="unimonito" optimistic-lock="version">
         <id name="idrol" type="int">

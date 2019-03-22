@@ -51,10 +51,7 @@ Contributor(s):
     <mapping resource="Modelo/Partido.hbm.xml"/>
     <mapping resource="Modelo/Deporte.hbm.xml"/>
     <mapping resource="Modelo/Usuario.hbm.xml"/>
-    <mapping resource="Modelo/Torneo.hbm.xml"/>
-    <mapping resource="Modelo/UsuarioHasEquipo.hbm.xml"/>
     <mapping resource="Modelo/Equipo.hbm.xml"/>
-    <mapping resource="Modelo/Ganador.hbm.xml"/>
     <mapping resource="Modelo/Rifa.hbm.xml"/>
     <mapping resource="Modelo/Boleta.hbm.xml"/>
     <mapping resource="Modelo/Apuesta.hbm.xml"/>

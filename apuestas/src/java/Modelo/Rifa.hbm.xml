@@ -1,30 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Rifa" table="rifa" catalog="unimonito" optimistic-lock="version">
         <id name="idrifa" type="int">
             <column name="idrifa" />
             <generator class="assigned" />
         </id>
-        <property name="nombre" type="string">
-            <column name="nombre" length="45" not-null="true" />
-        </property>
         <property name="premio" type="string">
             <column name="premio" length="45" not-null="true" />
         </property>
         <property name="numeroBoletas" type="int">
             <column name="numero_boletas" not-null="true" />
         </property>
-        <property name="fechaInicio" type="timestamp">
-            <column name="fecha_inicio" length="19" not-null="true" />
+        <property name="fechaInicio" type="string">
+            <column name="fecha_inicio" length="45" not-null="true" />
         </property>
-        <property name="fechaFin" type="timestamp">
-            <column name="fecha_fin" length="19" not-null="true" />
-        </property>
-        <property name="boletaIdboleta" type="int">
-            <column name="boleta_idboleta" not-null="true" />
+        <property name="fechaFin" type="string">
+            <column name="fecha_fin" length="45" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

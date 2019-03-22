@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
+// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
 
 
 
@@ -12,14 +12,27 @@ public class Boleta  implements java.io.Serializable {
      private int idboleta;
      private int valor;
      private int usuarioIdusuario;
+     private Integer rifaIdrifa;
+     private Integer apuestaIdapuesta;
+     private int gano;
 
     public Boleta() {
     }
 
-    public Boleta(int idboleta, int valor, int usuarioIdusuario) {
+	
+    public Boleta(int idboleta, int valor, int usuarioIdusuario, int gano) {
+        this.idboleta = idboleta;
+        this.valor = valor;
+        this.usuarioIdusuario = usuarioIdusuario;
+        this.gano = gano;
+    }
+    public Boleta(int idboleta, int valor, int usuarioIdusuario, Integer rifaIdrifa, Integer apuestaIdapuesta, int gano) {
        this.idboleta = idboleta;
        this.valor = valor;
        this.usuarioIdusuario = usuarioIdusuario;
+       this.rifaIdrifa = rifaIdrifa;
+       this.apuestaIdapuesta = apuestaIdapuesta;
+       this.gano = gano;
     }
    
     public int getIdboleta() {
@@ -42,6 +55,27 @@ public class Boleta  implements java.io.Serializable {
     
     public void setUsuarioIdusuario(int usuarioIdusuario) {
         this.usuarioIdusuario = usuarioIdusuario;
+    }
+    public Integer getRifaIdrifa() {
+        return this.rifaIdrifa;
+    }
+    
+    public void setRifaIdrifa(Integer rifaIdrifa) {
+        this.rifaIdrifa = rifaIdrifa;
+    }
+    public Integer getApuestaIdapuesta() {
+        return this.apuestaIdapuesta;
+    }
+    
+    public void setApuestaIdapuesta(Integer apuestaIdapuesta) {
+        this.apuestaIdapuesta = apuestaIdapuesta;
+    }
+    public int getGano() {
+        return this.gano;
+    }
+    
+    public void setGano(int gano) {
+        this.gano = gano;
     }
 
 

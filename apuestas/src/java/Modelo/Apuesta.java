@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
+// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
 
 
 
@@ -13,17 +13,15 @@ public class Apuesta  implements java.io.Serializable {
      private int valorMaximo;
      private int valorMinimo;
      private int partidoIdpartido;
-     private int boletaIdboleta;
 
     public Apuesta() {
     }
 
-    public Apuesta(int idapuesta, int valorMaximo, int valorMinimo, int partidoIdpartido, int boletaIdboleta) {
+    public Apuesta(int idapuesta, int valorMaximo, int valorMinimo, int partidoIdpartido) {
        this.idapuesta = idapuesta;
        this.valorMaximo = valorMaximo;
        this.valorMinimo = valorMinimo;
        this.partidoIdpartido = partidoIdpartido;
-       this.boletaIdboleta = boletaIdboleta;
     }
    
     public int getIdapuesta() {
@@ -53,13 +51,6 @@ public class Apuesta  implements java.io.Serializable {
     
     public void setPartidoIdpartido(int partidoIdpartido) {
         this.partidoIdpartido = partidoIdpartido;
-    }
-    public int getBoletaIdboleta() {
-        return this.boletaIdboleta;
-    }
-    
-    public void setBoletaIdboleta(int boletaIdboleta) {
-        this.boletaIdboleta = boletaIdboleta;
     }
 
 

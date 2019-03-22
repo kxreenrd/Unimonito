@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 20/03/2019 05:41:17 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Partido" table="partido" catalog="unimonito" optimistic-lock="version">
         <id name="idpartido" type="int">
@@ -14,14 +14,17 @@
         <property name="equipoVisitante" type="int">
             <column name="equipo_visitante" not-null="true" />
         </property>
-        <property name="fecha" type="timestamp">
-            <column name="fecha" length="19" not-null="true" />
+        <property name="fecha" type="string">
+            <column name="fecha" length="45" not-null="true" />
         </property>
         <property name="marcador" type="string">
             <column name="marcador" length="45" not-null="true" />
         </property>
-        <property name="torneoIdtorneo" type="int">
-            <column name="torneo_idtorneo" not-null="true" />
+        <property name="fechaInicio" type="string">
+            <column name="fecha_inicio" length="45" not-null="true" />
+        </property>
+        <property name="fechaFin" type="string">
+            <column name="fecha_fin" length="45" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

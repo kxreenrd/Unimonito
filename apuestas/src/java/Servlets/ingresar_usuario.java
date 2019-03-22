@@ -51,7 +51,7 @@ public class ingresar_usuario extends HttpServlet {
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>");
             out.println("<link rel=\"stylesheet\"  type='text/css' href=\"css/cssIndex.css\">");
             
-            out.println("<title>Servlet DeporteServlet</title>");            
+            out.println("<title>ADMIN</title>");            
             out.println("</head>");
             out.println("<body>");
             
@@ -78,6 +78,22 @@ public class ingresar_usuario extends HttpServlet {
             }
             out.println("</div>");
             
+            /*out.println("<script>\n" +
+                    "        function click_btn(id){\n" +
+                    "            document.getElementById(id).style.display = 'block';"
+                    + "var con = document.getElementsByClassName('container');" +
+                    "for(var i =1; i < con.length; i++){"
+                        //+ "console.log(con[i]['style'].display);"
+                        + "if(con[i].id != id){"
+                            + "document.getElementById(con[i].id).style.siplay = 'none'; "
+                        + "}"
+                    + "}"+
+                    "            console.log(document.getElementsByClassName('container'))" +
+                    "        }\n" +
+                    "        \n" +
+                    "        \n" +
+                    "    </script>");*/
+            
             out.println("</body>");
             out.println("</html>");
         }
@@ -85,11 +101,62 @@ public class ingresar_usuario extends HttpServlet {
     
     private String admin(){
         //tabla con rifa y apuestas
-        String boton = "<div class=\"btn-group btn-group-justified\">" +
-"            <a href=\"admin_torneo\" class=\"btn btn-primary\"> Crear Torneos </a>" +
-"            <a href=\"#\" class=\"btn btn-primary\">Crear Apuestas</a>" +
-"            <a href=\"#\" class=\"btn btn-primary\">Crear rifa</a>" +
-"        </div>"; 
+        String boton = 
+                /*"<div class=\"btn-group btn-group-justified\">" +
+"            <a href=\"#\" class=\"btn btn-primary\" onclick=\"click_btn('insert_torneo')\"> Crear Torneos </a>" +
+"            <a href=\"#\" class=\"btn btn-primary\" onclick=\"click_btn('insert_apuesta')\">Crear Apuestas</a>" +
+"            <a href=\"#\" class=\"btn btn-primary\" onclick=\"click_btn('insert_rifa')\">Crear rifa</a>" +
+"        </div>"+*/
+        
+                
+        "<div id=\"insert_apuesta\" class=\"container col-sm-4 container_ins\">\n" +
+"            <h2>Registro de apuesta</h2>\n" +
+"            <form action=\"apuestaServlet\" method=\"POST\">\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"nombre_usuario\">Nombres:</label>\n" +
+"                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter nombre\" name=\"nombre_usuario\">\n" +
+"                </div>\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"apellido_usuario\">Apelidos:</label>\n" +
+"                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter apellido\" name=\"apellido_usuario\">\n" +
+"                </div>\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"identificacion\">Identificación:</label>\n" +
+"                    <input type=\"number\" class=\"form-control\" placeholder=\"Enter identificacion\" name=\"identificacion\">\n" +
+"                </div>                \n" +
+"                <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n" +
+"            </form>\n" +
+"        </div>"+
+        
+                
+        "<div id=\"insert_rifa\" class=\"container col-sm-4 container_ins\">\n" +
+"            <h2>Registro de rifa</h2>\n" +
+"            <form action=\"rifasServlet\" method=\"POST\">\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"premio\">Premio:</label>\n" +
+"                    <input type=\"text\" class=\"form-control\" placeholder=\"Enter premio\" name=\"premio\">\n" +
+"                </div>\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"numero_boletas\">Número de boletas:</label>\n" +
+"                    <input type=\"number\" class=\"form-control\" placeholder=\"Enter numero de boletas\" name=\"num_boletas\">\n" +
+"                </div>                \n" +
+                "<div class=\"form-group\">\n" +
+"                    <label for=\"f_inicio\">Fecha inicio:</label>\n" +
+"                    <input type=\"datetime-local\" class=\"form-control\"  name=\"f_inicio\">\n" +
+"                </div>\n" +
+"                <div class=\"form-group\">\n" +
+"                    <label for=\"f_fin\">Fecha fin:</label>\n" +
+"                    <input type=\"datetime-local\" class=\"form-control\" name=\"f_fin\">\n" +
+"                </div>                \n" +
+"                <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n" +
+"            </form>\n" +
+"        </div>"
+                
+                
+                
+                
+                
+                ; 
         return boton;
     }
     

@@ -19,11 +19,9 @@ import org.hibernate.Transaction;
  */
 public class UsuarioDAO {
     Session session = null;
-    private Usuario usu;
     
     public UsuarioDAO(){
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
-        usu = new Usuario();
     }
         
     public List<Usuario> getUsuario(int identificacion) {
@@ -43,7 +41,7 @@ public class UsuarioDAO {
         us.setNombres(nombre);
         us.setApellidos(apellido);
         us.setIdentificacion(identificacion);
-        us.setRolIdrol(3);
+        us.setRolIdrol(2);
         //session.save(us);
         
         

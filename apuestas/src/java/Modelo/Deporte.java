@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 20/03/2019 05:41:14 PM by Hibernate Tools 4.3.1
+// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
 
 
 
@@ -11,15 +11,13 @@ public class Deporte  implements java.io.Serializable {
 
      private int iddeporte;
      private String nombre;
-     private int torneoIdtorneo;
 
     public Deporte() {
     }
 
-    public Deporte(int iddeporte, String nombre, int torneoIdtorneo) {
+    public Deporte(int iddeporte, String nombre) {
        this.iddeporte = iddeporte;
        this.nombre = nombre;
-       this.torneoIdtorneo = torneoIdtorneo;
     }
    
     public int getIddeporte() {
@@ -35,13 +33,6 @@ public class Deporte  implements java.io.Serializable {
     
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-    public int getTorneoIdtorneo() {
-        return this.torneoIdtorneo;
-    }
-    
-    public void setTorneoIdtorneo(int torneoIdtorneo) {
-        this.torneoIdtorneo = torneoIdtorneo;
     }
 
 
