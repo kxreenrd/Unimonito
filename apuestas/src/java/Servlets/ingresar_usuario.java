@@ -70,11 +70,11 @@ public class ingresar_usuario extends HttpServlet {
             out.println("<div class='contenido_pagina'>");
             for(Usuario p:u){
                 if(p.getRolIdrol() == 1){
-                    out.println("<h2> ->"+p.getNombres()+" usted es administrador</h2>");
+                    out.println(admin());
                 } else if(p.getRolIdrol() == 2){
-                    out.println("<h2> ->"+p.getNombres()+" usted es jugador</h2>");
+                    out.println(user());
                 }
-                out.println("<h2> ->"+p.getNombres()+"</h2>");
+                //out.println("<h2> ->"+p.getNombres()+"</h2>");
             }
             out.println("</div>");
             
@@ -83,8 +83,23 @@ public class ingresar_usuario extends HttpServlet {
         }
     }
     
-    private void admin(){
+    private String admin(){
         //tabla con rifa y apuestas
+        String boton = "<div class=\"btn-group btn-group-justified\">" +
+"            <a href=\"admin_torneo\" class=\"btn btn-primary\"> Crear Torneos </a>" +
+"            <a href=\"#\" class=\"btn btn-primary\">Crear Apuestas</a>" +
+"            <a href=\"#\" class=\"btn btn-primary\">Crear rifa</a>" +
+"        </div>"; 
+        return boton;
+    }
+    
+    private String user(){
+        //tabla con rifa y apuestas
+        String boton = "<div class=\"btn-group btn-group-justified\">" +
+"            <a href=\"DeporteServlet\" class=\"btn btn-primary\"> Rifas</a>" +
+"            <a href=\"#\" class=\"btn btn-primary\">Apuestas</a>" +
+"        </div>"; 
+        return boton;
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
