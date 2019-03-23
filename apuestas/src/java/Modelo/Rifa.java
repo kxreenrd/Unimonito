@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
+// Generated 23/03/2019 12:44:13 AM by Hibernate Tools 4.3.1
 
 
 
@@ -12,18 +12,22 @@ public class Rifa  implements java.io.Serializable {
      private int idrifa;
      private String premio;
      private int numeroBoletas;
-     private String fechaInicio;
-     private String fechaFin;
+     private String horaInicio;
+     private String horaFin;
+     private int valor;
+     private int activo;
 
     public Rifa() {
     }
 
-    public Rifa(int idrifa, String premio, int numeroBoletas, String fechaInicio, String fechaFin) {
+    public Rifa(int idrifa, String premio, int numeroBoletas, String horaInicio, String horaFin, int valor, int activo) {
        this.idrifa = idrifa;
        this.premio = premio;
        this.numeroBoletas = numeroBoletas;
-       this.fechaInicio = fechaInicio;
-       this.fechaFin = fechaFin;
+       this.horaInicio = horaInicio;
+       this.horaFin = horaFin;
+       this.valor = valor;
+       this.activo = activo;
     }
    
     public int getIdrifa() {
@@ -47,19 +51,33 @@ public class Rifa  implements java.io.Serializable {
     public void setNumeroBoletas(int numeroBoletas) {
         this.numeroBoletas = numeroBoletas;
     }
-    public String getFechaInicio() {
-        return this.fechaInicio;
+    public String getHoraInicio() {
+        return this.horaInicio;
     }
     
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setHoraInicio(String horaInicio) {
+        this.horaInicio = horaInicio;
     }
-    public String getFechaFin() {
-        return this.fechaFin;
+    public String getHoraFin() {
+        return this.horaFin;
     }
     
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
+    }
+    public int getValor() {
+        return this.valor;
+    }
+    
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+    public int getActivo() {
+        return this.activo;
+    }
+    
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 
 

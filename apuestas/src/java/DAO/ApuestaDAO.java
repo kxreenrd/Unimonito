@@ -6,33 +6,30 @@
 package DAO;
 
 import HibernateUtil.HibernateUtil;
-import Modelo.Rifa;
+import Modelo.Apuesta;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
  * @author Karen Rodriguez
  */
-public class RifaDAO {
-
+public class ApuestaDAO {
     Session session = null;
     Session se = null;
 
-    public RifaDAO() {
+    public ApuestaDAO() {
         this.session = HibernateUtil.getSessionFactory().getCurrentSession();
     }
 
-    public List<Rifa> setRifa(String premio, int n_b, int valor_boleta, String f_inicio, String f_fin) {
-        Rifa tor = new Rifa();
-        tor.setPremio(premio);
-        tor.setNumeroBoletas(n_b);
-        tor.setHoraInicio(f_inicio);
-        tor.setHoraFin(f_fin);
-        tor.setValor(valor_boleta);
+    public List<Apuesta> setApuesta(int id,int max, int min) {
+        Apuesta tor = new Apuesta();
+        tor.setValorMinimo(min);
+        tor.setValorMaximo(max);
+        
+        tor.setPartidoIdpartido(id);
         tor.setActivo(1);
 
         boolean aux = false;
@@ -49,11 +46,11 @@ public class RifaDAO {
                 session.close();
             }
         }
-        List<Rifa> rifa = new ArrayList<Rifa>();
+        List<Apuesta> apuesta = new ArrayList<Apuesta>();
         try {
             se = HibernateUtil.getSessionFactory().openSession();            
-            Query query = se.createQuery("from Rifa order by idrifa desc");            
-            rifa = (List<Rifa>) query.list();
+            Query query = se.createQuery("from Apuesta order by idapuesta desc");            
+            apuesta = (List<Apuesta>) query.list();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -61,15 +58,15 @@ public class RifaDAO {
                 se.close();
             }
         }
-        return rifa;
+        return apuesta;
     }
     
-    public List<Rifa> getRifa(){
-        List<Rifa> rifa = new ArrayList<Rifa>();
+    public List<Apuesta> getApuesta(){
+        List<Apuesta> rifa = new ArrayList<Apuesta>();
         try {
             se = HibernateUtil.getSessionFactory().openSession();            
-            Query query = se.createQuery("from Rifa where activo = 1");            
-            rifa = (List<Rifa>) query.list();
+            Query query = se.createQuery("from Apuesta where activo = 1");            
+            rifa = (List<Apuesta>) query.list();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
@@ -79,5 +76,4 @@ public class RifaDAO {
         }
         return rifa;
     }
-
 }

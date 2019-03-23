@@ -31,6 +31,7 @@ h4 {
     color: #fff;
     padding: 30px 25px;
     font-family: Montserrat, sans-serif;
+    margin-top: 6%;
 }
 .container-fluid {
     padding: 60px 50px;
@@ -199,4 +200,20 @@ footer .glyphicon {
     border-radius: 5px 5px;
     border-left: 1px solid #dbdbdb;
     border-right: 1px solid #dbdbdb;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+
+#ingresar_us_creado{
+    margin: 0% 30% 2%;
 }

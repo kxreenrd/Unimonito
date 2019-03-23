@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
+// Generated 23/03/2019 12:44:13 AM by Hibernate Tools 4.3.1
 
 
 
@@ -12,9 +12,10 @@ public class Boleta  implements java.io.Serializable {
      private int idboleta;
      private int valor;
      private int usuarioIdusuario;
-     private Integer rifaIdrifa;
      private Integer apuestaIdapuesta;
      private int gano;
+     private Integer rifaIdrifa;
+     private String marcadorApuesta;
 
     public Boleta() {
     }
@@ -26,13 +27,14 @@ public class Boleta  implements java.io.Serializable {
         this.usuarioIdusuario = usuarioIdusuario;
         this.gano = gano;
     }
-    public Boleta(int idboleta, int valor, int usuarioIdusuario, Integer rifaIdrifa, Integer apuestaIdapuesta, int gano) {
+    public Boleta(int idboleta, int valor, int usuarioIdusuario, Integer apuestaIdapuesta, int gano, Integer rifaIdrifa, String marcadorApuesta) {
        this.idboleta = idboleta;
        this.valor = valor;
        this.usuarioIdusuario = usuarioIdusuario;
-       this.rifaIdrifa = rifaIdrifa;
        this.apuestaIdapuesta = apuestaIdapuesta;
        this.gano = gano;
+       this.rifaIdrifa = rifaIdrifa;
+       this.marcadorApuesta = marcadorApuesta;
     }
    
     public int getIdboleta() {
@@ -56,13 +58,6 @@ public class Boleta  implements java.io.Serializable {
     public void setUsuarioIdusuario(int usuarioIdusuario) {
         this.usuarioIdusuario = usuarioIdusuario;
     }
-    public Integer getRifaIdrifa() {
-        return this.rifaIdrifa;
-    }
-    
-    public void setRifaIdrifa(Integer rifaIdrifa) {
-        this.rifaIdrifa = rifaIdrifa;
-    }
     public Integer getApuestaIdapuesta() {
         return this.apuestaIdapuesta;
     }
@@ -76,6 +71,20 @@ public class Boleta  implements java.io.Serializable {
     
     public void setGano(int gano) {
         this.gano = gano;
+    }
+    public Integer getRifaIdrifa() {
+        return this.rifaIdrifa;
+    }
+    
+    public void setRifaIdrifa(Integer rifaIdrifa) {
+        this.rifaIdrifa = rifaIdrifa;
+    }
+    public String getMarcadorApuesta() {
+        return this.marcadorApuesta;
+    }
+    
+    public void setMarcadorApuesta(String marcadorApuesta) {
+        this.marcadorApuesta = marcadorApuesta;
     }
 
 

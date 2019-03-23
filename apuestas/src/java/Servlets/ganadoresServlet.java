@@ -5,8 +5,12 @@
  */
 package Servlets;
 
+import DAO.GanadoresDAO;
+import Modelo.Boleta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Karen Rodriguez
  */
-@WebServlet(name = "apuestaServlet", urlPatterns = {"/apuestaServlet"})
-public class apuestaServlet extends HttpServlet {
+@WebServlet(name = "ganadoresServlet", urlPatterns = {"/ganadoresServlet"})
+public class ganadoresServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,19 +34,54 @@ public class apuestaServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    String nombre;
+    GanadoresDAO g = new GanadoresDAO();
+    List<Boleta> boleta = new ArrayList<Boleta>();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        boleta = g.getGanadores();
+        
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet apuestaServlet</title>");            
+            out.println("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">");
+            out.println("<link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\">");
+            out.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>");
+            out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>");
+            out.println("<link rel=\"stylesheet\"  type='text/css' href=\"css/cssIndex.css\">");
+            
+            out.println("<title>USER NEW </title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet apuestaServlet at " + request.getContextPath() + "</h1>");
+            
+            out.println("<nav class=\"navbar navbar-default navbar-fixed-top\">\n" +
+                "            <div class=\"container\">\n" +
+                "                <div class=\"navbar-header\">\n" +
+                "                    <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n" +
+                "                        <span class=\"icon-bar\"></span>\n" +
+                "                        <span class=\"icon-bar\"></span>\n" +
+                "                        <span class=\"icon-bar\"></span>                        \n" +
+                "                    </button>\n" +
+                "                    <a class=\"navbar-brand\" href=\"index.html\">Unimonito</a>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "        </nav>");
+            
+            out.println("<div class=\"jumbotron text-center\">\n" +
+"            <h1>¡Felicidades a todos los ganadores! </h1> \n" +
+"            <p>Por favor reclamar su premio lo antes posible.</p> \n" +
+"        </div>");
+            
+            out.println("<div class='contenido_pagina'>");
+            for(Boleta p:boleta){
+                out.println("<h1> "+p.getUsuarioIdusuario()+"</h1>");
+            }
+            out.println("</div>");
+            
+            
             out.println("</body>");
             out.println("</html>");
         }
@@ -75,7 +114,8 @@ public class apuestaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        //nombre = request.getParameter(nombre)
+        
+        
         processRequest(request, response);
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated 23/03/2019 12:44:13 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Modelo.Partido" table="partido" catalog="unimonito" optimistic-lock="version">
         <id name="idpartido" type="int">
@@ -20,11 +20,11 @@
         <property name="marcador" type="string">
             <column name="marcador" length="45" not-null="true" />
         </property>
-        <property name="fechaInicio" type="string">
-            <column name="fecha_inicio" length="45" not-null="true" />
+        <property name="horaInicio" type="string">
+            <column name="hora_inicio" length="45" not-null="true" />
         </property>
-        <property name="fechaFin" type="string">
-            <column name="fecha_fin" length="45" not-null="true" />
+        <property name="horaFin" type="string">
+            <column name="hora_fin" length="45" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>

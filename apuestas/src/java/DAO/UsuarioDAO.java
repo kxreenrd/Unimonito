@@ -62,30 +62,4 @@ public class UsuarioDAO {
         return aux;
     }
     
-    
-    
-    /*public String insertarRegistro() {
-        loginI Reg = new loginM();
-        String passNew = Reg.convertir(pass);
-        log.setUsuario(Usuario);
-        log.setPass(passNew);
-        log.setNombre(Nom);
-        log.setTelefono(Tel);
-        log.setEdad(E);
-        log.setCorreo(correo);
-        if (Reg.usuarioRepetido(Usuario)) {
-            if (Reg.insertarRegistro(log)) {
-                FacesContext.getCurrentInstance().getApplication().getNavigationHandler()
-                        .handleNavigation(FacesContext.getCurrentInstance(), null, "login.xhtml");
-            } else {
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERROR!", "no se pudo insertar el registro"));
-                RequestContext.getCurrentInstance().update("Registro:tablaLogin");
-            }
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERROR!", "usuario no disponible"));
-            RequestContext.getCurrentInstance().update("Registro:tablaLogin");
-        }
-        return "thanks?faces-redirect=true";
-    }*/
-    
 }

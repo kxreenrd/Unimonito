@@ -5,8 +5,10 @@
  */
 package Servlets;
 
-import DAO.RifaDAO;
-import Modelo.Rifa;
+import DAO.TorneoDAO;
+import DAO.ApuestaDAO;
+import Modelo.Apuesta;
+import Modelo.Partido;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -21,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Karen Rodriguez
  */
-@WebServlet(name = "rifasServlet", urlPatterns = {"/rifasServlet"})
-public class rifasServlet extends HttpServlet {
+@WebServlet(name = "torneoServlet", urlPatterns = {"/torneoServlet"})
+public class torneoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,15 +36,16 @@ public class rifasServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    String premio, num_boletas,valor_boleta, f_inicio, f_fin;
-    RifaDAO r = new RifaDAO();
-    List<Rifa> u = new ArrayList<Rifa>();
-     
-     
+    String e_local, e_visitante, fecha, h_i, h_f, vmx, vmn;
+    int id;
+    
+    TorneoDAO r = new TorneoDAO();
+    ApuestaDAO ap = new ApuestaDAO();
+    List<Apuesta> u = new ArrayList<Apuesta>();
+    List<Partido> pa = new ArrayList<Partido>();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //u = r.getRifa();
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -54,7 +57,7 @@ public class rifasServlet extends HttpServlet {
             out.println("<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js\"></script>");
             out.println("<link rel=\"stylesheet\"  type='text/css' href=\"css/cssIndex.css\">");
             
-            out.println("<title>ADMIN</title>");            
+            out.println("<title>APUESTA</title>");            
             out.println("</head>");
             out.println("<body>");
             
@@ -71,37 +74,33 @@ public class rifasServlet extends HttpServlet {
                 "            </div>\n" +
                 "        </nav>");
             
-            out.println("<div class=\"jumbotron text-center\">\n" +
+            /*out.println("<div class=\"jumbotron text-center\">\n" +
 "            <h1>Información:</h1> \n" +
 "            <p>El ganador de la rifa se seleccionara al acabar el tiempo de forma aleatoria.</p> \n" +
-"        </div>");
+"        </div>");*/
             
             out.println("<div class='contenido_pagina'>");
             
             out.println("<div id=\"rifas\" class=\"container-fluid\">\n" +
-"            <h2>Rifas</h2><br>\n" +
+"            <h2>APUESTAS</h2><br>\n" +
 "            <div class=\"row\">\n" +
 "                <table class=\"table\">\n" +
 "                    <thead>\n" +
 "                        <tr>\n" +
-"                            <th>Premio</th>\n" +
-"                            <th>Cantidad de boletas</th>\n" +
-                            "<th>Hora inicio</th>\n" +
-                            "<th>Hora fin</th>\n" +
-                            "<th>Valor boleta</th>\n" +
+"                            <th>Id apuesta</th>\n" +
+"                            <th>Valor máximo</th>\n" +
+                            "<th>Valor minimo</th>\n" +
+                            "<th>ID Partido</th>\n" +
                             "<th></th>\n" +
 "                        </tr>\n" +
 "                    </thead>\n" +
 "                    <tbody>\n" );
-            for(Rifa p:u){
+            for(Apuesta p:u){
                 out.println("<tr>\n" +
-                            "<td>"+p.getPremio()+"</td>\n" +
-"                            <td>\n" +
-"                                <span class=\"label label-primary\">"+p.getNumeroBoletas()+"</span>\n" +
-"                            </td>\n" +
-                            "<td>"+p.getHoraInicio()+"</td>\n" +
-                            "<td>"+p.getHoraFin()+"</td>\n" +
-                            "<td>"+p.getValor()+"</td>\n" +
+                            "<td>"+p.getIdapuesta()+"</td>\n" +
+                            "<td>"+p.getValorMaximo()+"</td>\n" +
+                            "<td>"+p.getValorMinimo()+"</td>\n" +
+                            "<td>"+p.getPartidoIdpartido()+"</td>\n" +
 "                            <td>\n" +
                                 "<span class=\"label label-success\"> Editar </span>\n" +
                                 "<span class=\"label label-danger\"> Eliminar </span>\n" +
@@ -116,7 +115,9 @@ public class rifasServlet extends HttpServlet {
 "        </div>");
             
             
-            //out.println("<h1>Servlet rifasServlet at " + f_inicio +"_"+f_fin+ "</h1>");
+            //out.println("<h1>Servlet rifasServlet at " + pa + "</h1>");
+            
+            
             out.println("</div>");
             out.println("</body>");
             out.println("</html>");
@@ -150,15 +151,21 @@ public class rifasServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        e_local = request.getParameter("local");
+        e_visitante= request.getParameter("visitante"); 
+        fecha = request.getParameter("fecha");
+        h_i = request.getParameter("h_inicio"); 
+        h_f = request.getParameter("h_fin");
         
+        vmx = request.getParameter("vmax");
+        vmn = request.getParameter("vmin");
         
-        premio = request.getParameter("premio");
-        num_boletas = request.getParameter("num_boletas");
-        valor_boleta = request.getParameter("valor_boleta");
-        f_inicio = request.getParameter("f_inicio");
-        f_fin = request.getParameter("f_fin");
+        pa = r.setPartido(Integer.parseInt(e_local), Integer.parseInt(e_visitante), fecha, h_i, h_f);
+        for(Partido p:pa){
+            id = p.getIdpartido();
+        }
+        u = ap.setApuesta(id, Integer.parseInt(vmx), Integer.parseInt(vmn));
         
-        u = r.setRifa(premio, Integer.parseInt(num_boletas),Integer.parseInt(valor_boleta), f_inicio, f_fin);
         
         processRequest(request, response);
     }

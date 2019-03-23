@@ -1,5 +1,5 @@
 package Modelo;
-// Generated 22/03/2019 12:45:38 AM by Hibernate Tools 4.3.1
+// Generated 23/03/2019 12:44:13 AM by Hibernate Tools 4.3.1
 
 
 
@@ -14,20 +14,20 @@ public class Partido  implements java.io.Serializable {
      private int equipoVisitante;
      private String fecha;
      private String marcador;
-     private String fechaInicio;
-     private String fechaFin;
+     private String horaInicio;
+     private String horaFin;
 
     public Partido() {
     }
 
-    public Partido(int idpartido, int equipoLocal, int equipoVisitante, String fecha, String marcador, String fechaInicio, String fechaFin) {
+    public Partido(int idpartido, int equipoLocal, int equipoVisitante, String fecha, String marcador, String horaInicio, String horaFin) {
        this.idpartido = idpartido;
        this.equipoLocal = equipoLocal;
        this.equipoVisitante = equipoVisitante;
        this.fecha = fecha;
        this.marcador = marcador;
-       this.fechaInicio = fechaInicio;
-       this.fechaFin = fechaFin;
+       this.horaInicio = horaInicio;
+       this.horaFin = horaFin;
     }
    
     public int getIdpartido() {
@@ -65,19 +65,19 @@ public class Partido  implements java.io.Serializable {
     public void setMarcador(String marcador) {
         this.marcador = marcador;
     }
-    public String getFechaInicio() {
-        return this.fechaInicio;
+    public String getHoraInicio() {
+        return this.horaInicio;
     }
     
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setHoraInicio(String horaInicio) {
+        this.horaInicio = horaInicio;
     }
-    public String getFechaFin() {
-        return this.fechaFin;
+    public String getHoraFin() {
+        return this.horaFin;
     }
     
-    public void setFechaFin(String fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setHoraFin(String horaFin) {
+        this.horaFin = horaFin;
     }
 
 
