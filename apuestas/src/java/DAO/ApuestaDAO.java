@@ -8,6 +8,7 @@ package DAO;
 import HibernateUtil.HibernateUtil;
 import Modelo.Apuesta;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -65,8 +66,11 @@ public class ApuestaDAO {
         List<Apuesta> rifa = new ArrayList<Apuesta>();
         try {
             se = HibernateUtil.getSessionFactory().openSession();            
-            Query query = se.createQuery("from Apuesta where activo = 1");            
+            Query query = se.createQuery("from Apuesta a where a.activo = 1");       
+
+            
             rifa = (List<Apuesta>) query.list();
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
